@@ -14,7 +14,8 @@ const addJobs = async(req , res)=>{
     const resume = await Resume.findOne({userId : req.user.id});
     if(!resume){
      return res.status(400).json({
-      message : 'Resume not found. Please analyze resume first.'
+      success : false,
+      error : 'Resume not found. Please analyze resume first.'
      })
     }
     const resumetext = resume.correctedText;
@@ -31,17 +32,16 @@ const addJobs = async(req , res)=>{
       notes,
       matchPercentage,
     })
-    await job.save();
     res.json({
       success : true, job,
       message : "Job added"
     })
     console.log(job)
   } catch (error) {
-    res.json({
-      status : 400,
-      success : false,
-      error
+    res.status(400).json({
+      success: false,
+      message: "Error adding job",
+      error: error.message
     })
     console.log(error)
   }

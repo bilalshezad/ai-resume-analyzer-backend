@@ -11,8 +11,7 @@ app.use(cors())
  
  const corsOptions = {
   origin: [
-    "http://localhost:3000", // local dev
-    "https://ai-powered-resume-and-job-tracker-k.vercel.app" // replace with your deployed frontend URL
+    "http://localhost:5000", // local dev
   ],
   credentials: true
 };
