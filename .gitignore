@@ -1,0 +1,8 @@
+# Ignore the environment file (commonly used for secrets)
+.env
+
+# Ignore the 'env' directory (often used for virtual environments, e.g., Python)
+env/
+
+# Ignore the 'node_modules' directory (contains project dependencies)
+node_modules/
