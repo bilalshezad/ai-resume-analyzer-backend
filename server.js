@@ -7,11 +7,10 @@ const jobRoutes = require('./routes/jobsRoutes');
 // const authToken = require("./middleware/authToken");
 const cors = require('cors');
 const app = express();
-app.use(cors())
  
  const corsOptions = {
   origin: [
-    "http://localhost:5000", // local dev
+    "https://ai-resume-analyzer-backend-eight.vercel.app", // local dev
   ],
   credentials: true
 };
