@@ -10,9 +10,13 @@ const app = express();
  
  const corsOptions = {
   origin: [
-    "https://ai-resume-analyzer-backend-eight.vercel.app", // local dev
+    "https://ai-resume-analyzer-frontend-sable.vercel.app",
+    "http://localhost:3000",
+    "http://localhost:5173",
   ],
-  credentials: true
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 };
 app.use(cors(corsOptions));
 // middleware
